@@ -110,7 +110,7 @@ router.delete("/employees", async (req, res) => {
 
     try{
         await EmpModel.findByIdAndDelete(req.query.eid)
-        res.status(204).send({message: `Deleted employee with id: {eid}`})
+        res.sendStatus(204)
 
     } catch(err){
         return res.status(500).send({message: err.message || "An error occurred in the server"})
