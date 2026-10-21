@@ -1,14 +1,11 @@
 const express = require("express")
 const app = express()
-
 const userRoutes = require("./routes/userRoutes.js")
 const empRoutes = require("./routes/empRoutes.js")
-
 const mongoose = require("mongoose")
-const env = require("dotenv").config()
 
 const PORT = process.env.PORT || 8085
-const MONGODB_URI = env.MONGODB_URI
+const MONGODB_URI = "mongodb+srv://Vercel-Admin-comp3123_assignment1:i7V8e6pjbRA7rYgR@comp3123-assignment1.xgvhnto.mongodb.net/?retryWrites=true&w=majority" 
 // DB_LOCAL_URI = "mongodb://127.0.0.1:27018/comp3123_assignment1"
 
 app.use(express.json())

@@ -21,13 +21,7 @@ router.post("/signup", async (req, res) => {
         
         const savedUser = await user.save()
 
-        return res.status(201).json({
-            id: savedUser._id,
-            username: savedUser.username,
-            email: savedUser.email,
-            created_at: savedUser.created_at,
-            updated_at: savedUser.updated_at
-        })
+        return res.status(201).json(savedUser)
 
     } catch(err){
         return res.status(500).send({message: err.message || "An error occurred in the server"})
@@ -49,7 +43,7 @@ router.post("/login", async (req, res) => {
         })
 
         if(user){
-            return res.status(200).send(user)
+            return res.status(200).json(user)
         }
 
     } catch(err){
